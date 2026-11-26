@@ -1,6 +1,4 @@
-
 name: Build Tugas 6
-
 on:
   push:
     branches:
@@ -9,17 +7,17 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Compile C++
-        run: g++ kessi.cpp -o kessi
+        run: g++ kessi.cpp -o kessi.exe
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: tugas-6
-          path: kessi
+          path: kessi.exe
